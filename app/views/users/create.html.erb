@@ -1,0 +1,11 @@
+<% if @user.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <h3><%= message %></h3>
+      <% end %>
+    </ul>
+  </div>
+<% elsif %>
+  <h3>登録が完了しました</h3>
+<% end %>

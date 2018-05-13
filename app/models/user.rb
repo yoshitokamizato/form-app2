@@ -1,0 +1,21 @@
+class User < ActiveRecord::Base
+  validates :name, presence: true
+  validates :age, presence: true
+  validates :mail, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }, presence: true
+  validates :address, presence: true
+  validates :gender, presence: true
+  validates :program, presence: true
+  validates :skils, presence: true
+
+  def searchAll
+    return User.all
+  end
+
+  def searchId(id1,id2)
+    return User.find_by_sql(['select * from users where id >= :id1 and id <= :id2', {id1: id1, id2: id2}])
+  end
+
+  def searchData(user)
+    return User.find_by_sql(['SELECT * FROM users WHERE CONCAT(id, name, address, gender, program, skils) LIKE :user', {user: "%#{user}%"}])
+  end
+end

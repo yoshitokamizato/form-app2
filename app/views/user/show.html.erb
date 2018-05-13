@@ -1,0 +1,14 @@
+<h1>ユーザ一覧</h1>
+<hr>
+<% @users.each do |user| %>
+  <p>ユーザID：<%= user.id %></p>
+  <p>お名前：<%= user.name %></p>
+  <p>年齢：<%= user.age %></p>
+  <p>住所：<%= user.address %></p>
+  <p>性別：<%= user.gender %></p>
+  <p>勉強中の言語：<%= user.program %></p>
+  <p>スキル：<%= user.skils %></p>
+  <p><%= link_to '編集', "/user/#{user.id}/edit", method: :get %>
+  <%= link_to '削除', "/user/#{user.id}", method: :delete %></p>
+  <hr/>
+<% end %>

@@ -1,0 +1,18 @@
+<h1>スキルシート</h1>
+
+<hr>
+<%= simple_form_for @user ,:url => {:action => :create} do |f| %>
+  <div class="text">
+    <p><%= f.input :name %></p>
+    <p><%= f.input :age %></p>
+    <p><%= f.input :mail %></p>
+    <p><%= f.input :address %></p>
+    <p><%= f.input :gender %></p>
+    <p><%= f.input :program %></p>
+    <p><%= f.input :skils, as: :text %></p>
+  </div>
+  <hr>
+  <div class="btn-wrapper">
+    <p><%= f.button :submit, "送信", :class=>"btn" %></p>
+  </div>
+<% end %>
