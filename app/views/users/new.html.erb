@@ -1,57 +1,51 @@
 <h1 class="text-center">基本情報</h1>
 <hr>
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <div class="form-container">
-        <%= simple_form_for @user ,:url => {:action => :create} do |f| %>
-          <table class="table text-center">
-            <thead>
-              <tr>
-                <th>項目</th>
-                <th>入力内容</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>お名前</td>
-                <td><%= f.text_field :name %></td>
-              </tr>
-              <tr>
-                <td>年齢</td>
-                <td><%= f.text_field :age %></td>
-              </tr>
-              <tr>
-                <td>メール</td>
-                <td><%= f.text_field :mail %></td>
-              </tr>
-              <tr>
-                <td>お住まい</td>
-                <td><%= f.text_field :address %></td>
-              </tr>
-              <tr>
-                <td>性別</td>
-                <td><%= f.text_field :gender %></td>
-              </tr>
-              <tr>
-                <td>得意言語</td>
-                <td><%= f.text_field :program %></td>
-              </tr>
-              <tr>
-                <td>スキル</td>
-                <td><%= f.text_field :skils %></td>
-              </tr>
-              <tr>
-                <td>画像</td>
-                <td><%= f.file_field :image %></td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="btn-wrapper text-center">
-            <p><%= f.button :submit, "送信", :class=>"btn btn-primary" %></p>
-          </div>
-        <% end %>
-      </div>
+<section id="user-form">
+  <%= simple_form_for @user ,:url => {:action => :create} do |f| %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>入力内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>お名前</td>
+          <td><%= f.text_field :name %></td>
+        </tr>
+        <tr>
+          <td>年齢</td>
+          <td><%= f.text_field :age %></td>
+        </tr>
+        <tr>
+          <td>メール</td>
+          <td><%= f.text_field :mail %></td>
+        </tr>
+        <tr>
+          <td>お住まい</td>
+          <td><%= f.text_field :address %></td>
+        </tr>
+        <tr>
+          <td>性別</td>
+          <td><%= f.text_field :gender %></td>
+        </tr>
+        <tr>
+          <td>得意言語</td>
+          <td><%= f.text_field :program %></td>
+        </tr>
+        <tr>
+          <td>スキル</td>
+          <td><%= f.text_field :skils %></td>
+        </tr>
+        <tr>
+          <td>画像</td>
+          <td><%= f.file_field :image %></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="btn-wrapper text-center">
+      <p><%= f.button :submit, "送信", :class=>"btn btn-primary" %></p>
     </div>
-  </div>
-</div>
+  <% end %>
+</section>
