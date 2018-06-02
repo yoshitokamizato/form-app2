@@ -10,4 +10,4 @@
 <p>スキル：<%= @user.skils %></p>
 <p><%= image_tag @user.image_url(:thumb) %></p>
 <p><%= link_to '編集', "/user/#{@user.id}/edit", method: :get %>
-<%= link_to '削除', "/user/#{@user.id}", method: :delete %></p>
+<%= link_to '削除', "/user/#{@user.id}", method: :delete, data: {confirm: 'Are you sure?'} %></p>

@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @persentage = rand(1..100)
   end
 
   def new
@@ -34,5 +35,7 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :age, :mail, :address, :gender, :program, :skils, :image)
+    # => (:name params[:name], :age params[:age].......)
   end
+
 end

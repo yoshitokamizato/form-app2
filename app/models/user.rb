@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
   validates :gender, presence: true
   validates :program, presence: true
   validates :skils, presence: true
-  validates :image, presence: true
 
   def searchAll
     return User.all

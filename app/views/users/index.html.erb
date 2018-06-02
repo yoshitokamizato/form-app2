@@ -1,27 +1,29 @@
+<div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= @persentage %>%"></div>
+</div>
 <% breadcrumb :users %>
 <h1>ユーザ一覧</h1>
-<hr>
 <div class="table-responsive">
 	<table class="table">
-		<thead>
+		<thead class="thead-dark">
 			<tr>
-				<th>ID</th>
-				<th>名前</th>
-				<th>年齢</th>
-				<th>メール</th>
-				<th>住所</th>
-				<th>性別</th>
-				<th>得意言語</th>
-        <th>スキル</th>
-        <th>画像</th>
-        <th>編集</th>
-        <th>削除</th>
+				<th scope="col">ID</th>
+				<th scope="col">名前</th>
+				<th scope="col">メール</th>
+				<th scope="col">年齢</th>
+				<th scope="col">住所</th>
+				<th scope="col">性別</th>
+				<th scope="col">得意言語</th>
+        <th scope="col">スキル</th>
+        <th scope="col">画像</th>
+        <th scope="col">編集</th>
+        <th scope="col">削除</th>
 			</tr>
 		</thead>
 		<tbody>
       <% @users.each.with_index(1) do |user, i| %>
         <tr>
-          <th><%= i %></th>
+          <th scope="row"><%= i %></th>
           <td><%= link_to "#{user.name}", "/users/#{user.id}", method: :get %></td>
           <td><%= user.age %></td>
           <td><%= user.mail %></td>
@@ -31,7 +33,13 @@
           <td><%= user.skils %></td>
           <td><%= image_tag user.image_url(:thumb) %></td>
           <td><%= link_to '編集', "/users/#{user.id}/edit", method: :get %></td>
-          <td><%= link_to '削除', "/users/#{user.id}", method: :delete %></td>
+          <td>
+						<%= link_to '削除', "/users/#{user.id}", method: :delete,
+							data: {
+								confirm: "本当に#{user.name}を削除してよろしいですか？",
+							}
+						%>
+					</td>
         </tr>
       <% end %>
 		</tbody>

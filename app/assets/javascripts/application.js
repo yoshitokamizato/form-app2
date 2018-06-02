@@ -10,7 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require bootstrap-sprockets
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
@@ -18,6 +17,10 @@
 //= require react_ujs
 //= require components
 //= require_tree .
+// = require data-confirm-modal
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
 
 ajaxMain: function(){
   console.log("hello world!");

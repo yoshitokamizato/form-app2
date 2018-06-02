@@ -14,6 +14,7 @@ ja:
        gender: '性別'
        program: '勉強中の言語'
        skils: 'スキル一覧'
+       image: '画像'
      curriculum:
        course: 'コース名'
        hour: '学習時間'

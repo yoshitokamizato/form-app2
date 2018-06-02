@@ -5,42 +5,33 @@
     <table class="table">
       <thead>
         <tr>
-          <th>項目</th>
           <th>入力内容</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>お名前</td>
-          <td><%= f.text_field :name %></td>
+          <td><%= f.input :name %></td>
         </tr>
         <tr>
-          <td>年齢</td>
-          <td><%= f.text_field :age %></td>
+          <td><%= f.input :age %></td>
         </tr>
         <tr>
-          <td>メール</td>
-          <td><%= f.text_field :mail %></td>
+          <td><%= f.input :mail %></td>
         </tr>
         <tr>
-          <td>お住まい</td>
-          <td><%= f.text_field :address %></td>
+          <td><%= f.input :address %></td>
         </tr>
         <tr>
-          <td>性別</td>
-          <td><%= f.text_field :gender %></td>
+          <td><%= f.input :gender %></td>
         </tr>
         <tr>
-          <td>得意言語</td>
-          <td><%= f.text_field :program %></td>
+          <td><%= f.input :program %></td>
         </tr>
         <tr>
-          <td>スキル</td>
-          <td><%= f.text_field :skils %></td>
+          <td><%= f.input :skils %></td>
         </tr>
         <tr>
-          <td>画像</td>
-          <td><%= f.file_field :image %></td>
+          <td>画像<%= f.file_field :image %></td>
         </tr>
       </tbody>
     </table>
