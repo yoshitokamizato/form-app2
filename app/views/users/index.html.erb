@@ -9,7 +9,7 @@
               <%= image_tag user.image_url(:thumb) %>
               <p><%= user.name %></p>
             <% end %>
-            <p>Skills&nbsp;&nbsp;<%= user.skils.delete_if(&:empty?).join(",") %></p>
+            <p><%= user.skils.delete_if(&:empty?).join(", ") %></p>
           </div>
         <% end %>
       </div>

@@ -2,7 +2,7 @@
   <% breadcrumb :new_user %>
   <h3 class="text-center">新規登録</h3>
   <section id="user-form">
-    <%= simple_form_for @user ,:url => {:action => :create} do |f| %>
+    <%= simple_form_for @user ,:url => {:action => :update} do |f| %>
       <table class="table">
         <thead class="thead-dark">
           <tr>
