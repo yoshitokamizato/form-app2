@@ -1,38 +1,107 @@
-<section id="new_user_form">
-  <h3 class="text-center">基本情報</h3>
+<section id="new-user-form">
+  <% breadcrumb :new_user %>
+  <h3 class="text-center">新規登録</h3>
   <section id="user-form">
     <%= simple_form_for @user ,:url => {:action => :create} do |f| %>
       <table class="table">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">入力内容</th>
+            <th class="text-center" scope="col">入力内容</th>
           </tr>
         </thead>
         <tbody>
+          <div class="container">
           <tr>
-            <td><%= f.input :name %></td>
+            <td>
+              <div class="user-form-input">
+                <div class="row">
+                  <div class="col-3">
+                    <%= f.label :name %>
+                  </div>
+                  <div class="col-9">
+                    <%= f.input_field :name %>
+                  </div>
+                </div>
+              </div>
+            </td>
           </tr>
           <tr>
-            <td><%= f.input :age %></td>
+            <td>
+              <div class="user-form-input">
+                <div class="row">
+                  <div class="col-3">
+                    <%= f.label :age %>
+                  </div>
+                  <div class="col-9">
+                    <%= f.input_field :age %>
+                  </div>
+                </div>
+              </div>
+            </td>
           </tr>
           <tr>
-            <td><%= f.input :mail %></td>
+            <td>
+              <div class="user-form-input">
+                <div class="row">
+                  <div class="col-3">
+                    <%= f.label :mail %>
+                  </div>
+                  <div class="col-9">
+                    <%= f.input_field :mail %>
+                  </div>
+                </div>
+              </div>
+            </td>
           </tr>
           <tr>
-            <td><%= f.input :address %></td>
+            <td>
+              <div class="user-form-input">
+                <div class="row">
+                  <div class="col-3">
+                    <%= f.label :address %>
+                  </div>
+                  <div class="col-9">
+                    <%= f.input_field :address %>
+                  </div>
+                </div>
+              </div>
+            </td>
           </tr>
           <tr>
-            <td><%= f.input :gender %></td>
+            <td>
+              <div class="user-form-input">
+                <div class="row">
+                  <div class="col-3">
+                    <%= f.label :gender %>
+                  </div>
+                  <div class="col-9">
+                    <%= f.input_field :gender %>
+                  </div>
+                </div>
+              </div>
+            </td>
           </tr>
           <tr>
-            <td><%= f.input :program %></td>
+            <td>
+              <div class="user-form-input">
+                <div class="row">
+                  <div class="col-3">
+                    <%= f.label :program %>
+                  </div>
+                  <div class="col-9">
+                    <%= f.input_field :program %>
+                  </div>
+                </div>
+              </div>
+            </td>
           </tr>
           <tr>
-            <td><%= f.collection_check_boxes :skils, [["Java", "Java"],["Ruby", "Ruby"],["PHP", "PHP"],["Python", "Python"]], :first, :last %></td>
+            <td class="text-center"><%= f.collection_check_boxes :skils, [["Java", "Java"],["Ruby", "Ruby"],["PHP", "PHP"],["Python", "Python"]], :first, :last %></td>
           </tr>
           <tr>
-            <td>画像<%= f.file_field :image %></td>
+            <td class="text-center"><%= f.label :image %><%= f.file_field :image %></td>
           </tr>
+          </div>
         </tbody>
       </table>
       <div class="btn-wrapper text-center">

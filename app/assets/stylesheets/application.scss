@@ -13,8 +13,22 @@
  *= require_self
  */
 
- @import "bootstrap";
- @import "users";
+@import "bootstrap";
+
+
+@media screen and (min-width:0px){
+  /*0px以上で適用する内容*/
+  @import "smart_phone";
+}
+
+@media screen and (min-width:300px){
+  /*300px以上で適用する内容*/
+}
+
+@media screen and (min-width:600px){
+  /*600px以上で適用する内容*/
+  @import "users";
+}
 
 .form-input {
   input {

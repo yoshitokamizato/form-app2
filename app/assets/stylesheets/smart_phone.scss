@@ -1,0 +1,28 @@
+#new-user-form {
+  width: 350px;
+  h3 {
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+  input[type="checkbox"] {
+    margin: 0 10px;
+  }
+  input {
+    padding: 10px;
+  }
+  label {
+    padding-right: 10px;
+  }
+  .user-form-input {
+    label {
+      padding: 5px;
+      font-size: 15px;
+    }
+    input {
+      margin-left: 10px;
+    }
+  }
+  .checkbox {
+    margin-left: 5px;
+  }
+}

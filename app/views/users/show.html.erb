@@ -1,13 +1,59 @@
 <% breadcrumb :user, @user %>
-<h1>ユーザ一覧</h1>
-<hr>
-<p>ユーザID：<%= @user.id %></p>
-<p>お名前：<%= @user.name %></p>
-<p>年齢：<%= @user.age %></p>
-<p>住所：<%= @user.address %></p>
-<p>性別：<%= @user.gender %></p>
-<p>勉強中の言語：<%= @user.program %></p>
-<p>スキル：<%= @user.skils %></p>
-<p><%= image_tag @user.image_url(:thumb) %></p>
-<p><%= link_to '編集', "/user/#{@user.id}/edit", method: :get %>
-<%= link_to '削除', "/user/#{@user.id}", method: :delete, data: {confirm: 'Are you sure?'} %></p>
+<section id="users-list">
+  <div class="container">
+    <div class="row">
+      <h3>ユーザ一覧</h3>
+      <div class="table-responsive">
+      	<table class="table">
+      		<thead class="thead-dark">
+      			<tr>
+      				<th scope="col">ID</th>
+      				<th scope="col">名前</th>
+      				<th scope="col">メール</th>
+      				<th scope="col">年齢</th>
+      				<th scope="col">住所</th>
+      				<th scope="col">性別</th>
+      				<th scope="col">得意言語</th>
+              <th scope="col">スキル</th>
+              <th scope="col">画像</th>
+              <th scope="col">編集</th>
+              <th scope="col">削除</th>
+      			</tr>
+      		</thead>
+      		<tbody>
+              <tr>
+                <th scope="row"><%= @user.id %></th>
+                <td><%= @user.name %></td>
+                <td><%= @user.age %></td>
+                <td><%= @user.mail %></td>
+                <td><%= @user.address %></td>
+                <td><%= @user.gender %></td>
+                <td><%= @user.program %></td>
+                <td>
+                  <%= @user.skils.delete_if(&:empty?).join(",") %>
+                </td>
+                <td><%= image_tag @user.image_url(:thumb) %></td>
+                <td><%= link_to '編集', "/users/#{@user.id}/edit", method: :get %></td>
+                <td>
+      						<%= link_to '削除', "/users/#{@user.id}", method: :delete,
+      							data: {
+      								confirm: "本当に#{@user.name}を削除してよろしいですか？",
+      							}
+      						%>
+      					</td>
+              </tr>
+      		</tbody>
+      	</table>
+        <div class="progressbar-container">
+          <% @user.skils.each do |skill| %>
+            <div class="col-md-12">
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= @skill %>%"><%= skill %>&nbsp;&nbsp;<%= @skill %>%</div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

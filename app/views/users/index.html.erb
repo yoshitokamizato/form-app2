@@ -1,7 +1,4 @@
 <section id="users-list">
-  <div class="progress">
-    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= @persentage %>%"></div>
-  </div>
   <% breadcrumb :users %>
   <h3>ユーザ一覧</h3>
   <div class="table-responsive">
@@ -31,7 +28,9 @@
             <td><%= user.address %></td>
             <td><%= user.gender %></td>
             <td><%= user.program %></td>
-            <td><%= user.skils %></td>
+            <td>
+              <%= user.skils.delete_if(&:empty?).join(",") %>
+            </td>
             <td><%= image_tag user.image_url(:thumb) %></td>
             <td><%= link_to '編集', "/users/#{user.id}/edit", method: :get %></td>
             <td>

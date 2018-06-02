@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @skill = 100
   end
 
   def edit
@@ -29,6 +30,7 @@ class UsersController < ApplicationController
   def destroy
     user = User.find(params[:id])
     user.destroy
+    redirect_to "/"
   end
 
   private

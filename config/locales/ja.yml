@@ -12,7 +12,7 @@ ja:
        age: '年齢'
        address: '住所'
        gender: '性別'
-       program: '勉強中の言語'
+       program: '主な言語'
        skils: 'スキル一覧'
        image: '画像'
      curriculum:
