@@ -1,3 +1,25 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#users-list {
+  h3 {
+    font-size: 20px;
+  }
+}
+
+#new_user_form {
+  padding-top: 100px;
+  width: 700px;
+  margin: 0 auto;
+  h3 {
+    font-size: 20px;
+  }
+  input[type="checkbox"] {
+    margin: 0 10px;
+  }
+  input {
+    padding: 10px;
+  }
+}

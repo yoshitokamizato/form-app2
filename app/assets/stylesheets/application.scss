@@ -14,6 +14,7 @@
  */
 
  @import "bootstrap";
+ @import "users";
 
 .form-input {
   input {
@@ -46,13 +47,5 @@
       clear: both;
       width: 100px;
     }
-  }
-}
-
-#user-form {
-  width: 700px;
-  margin: 0 auto;
-  input {
-    float: right;
   }
 }

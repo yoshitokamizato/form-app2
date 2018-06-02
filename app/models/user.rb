@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  serialize :skils
+
   validates :name, presence: true
   validates :age, presence: true
   validates :mail, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }, presence: true
