@@ -4,15 +4,19 @@
 
 
 #users-list {
+  padding-top: 50px;
   h3 {
     font-size: 20px;
+  }
+  .prof-image {
+    padding-bottom: 30px;
   }
   .progress {
     height: 2rem;
     margin: 30px;
   }
   .progressbar-container {
-    padding-top: 50px; 
+    padding-top: 50px;
   }
 }
 

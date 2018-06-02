@@ -1,3 +1,23 @@
+#users-list {
+  padding-top: 50px;
+  h3 {
+    font-size: 20px;
+  }
+  .prof-image {
+    padding-bottom: 15px;
+  }
+  th, td {
+    font-size: 15px;
+  }
+  .progress {
+    height: 1.3rem;
+    margin: 10px;
+  }
+  .progressbar-container {
+    padding-top: 50px;
+  }
+}
+
 #new-user-form {
   width: 350px;
   h3 {

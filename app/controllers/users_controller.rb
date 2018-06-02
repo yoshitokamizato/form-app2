@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  def top
+    @users = User.all
+  end
 
   def index
     @users = User.all
@@ -11,6 +14,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    redirect_to "/"
   end
 
   def show

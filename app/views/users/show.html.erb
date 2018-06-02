@@ -1,55 +1,64 @@
 <% breadcrumb :user, @user %>
 <section id="users-list">
+  <div class="prof-image text-center">
+    <%= image_tag @user.image_url(:thumb)%>
+  </div>
   <div class="container">
     <div class="row">
-      <h3>ユーザ一覧</h3>
       <div class="table-responsive">
-      	<table class="table">
-      		<thead class="thead-dark">
+      	<table class="table text-center">
+          <thead class="thead-dark">
+            <th scope="col">項目</th>
+            <th scope="col">内容</th>
+          </thead>
+      		<tbody class="thead-dark">
       			<tr>
-      				<th scope="col">ID</th>
-      				<th scope="col">名前</th>
-      				<th scope="col">メール</th>
-      				<th scope="col">年齢</th>
-      				<th scope="col">住所</th>
-      				<th scope="col">性別</th>
-      				<th scope="col">得意言語</th>
-              <th scope="col">スキル</th>
-              <th scope="col">画像</th>
-              <th scope="col">編集</th>
-              <th scope="col">削除</th>
-      			</tr>
-      		</thead>
-      		<tbody>
-              <tr>
-                <th scope="row"><%= @user.id %></th>
-                <td><%= @user.name %></td>
-                <td><%= @user.age %></td>
-                <td><%= @user.mail %></td>
-                <td><%= @user.address %></td>
-                <td><%= @user.gender %></td>
-                <td><%= @user.program %></td>
-                <td>
-                  <%= @user.skils.delete_if(&:empty?).join(",") %>
-                </td>
-                <td><%= image_tag @user.image_url(:thumb) %></td>
-                <td><%= link_to '編集', "/users/#{@user.id}/edit", method: :get %></td>
-                <td>
-      						<%= link_to '削除', "/users/#{@user.id}", method: :delete,
-      							data: {
-      								confirm: "本当に#{@user.name}を削除してよろしいですか？",
-      							}
-      						%>
-      					</td>
-              </tr>
+      				<td scope="col">ID</td>
+              <td scope="row"><%= @user.id %></td>
+            </tr>
+            <tr>
+              <td>名前</td>
+              <td><%= @user.name %></td>
+            </tr>
+            <tr>
+              <td>年齢</td>
+              <td><%= @user.age %></td>
+            </tr>
+            <tr>
+              <td>メール</td>
+              <td><%= @user.mail %></td>
+            </tr>
+            <tr>
+              <td>住所</td>
+              <td><%= @user.address %></td>
+            </tr>
+            <tr>
+              <td>性別</td>
+              <td><%= @user.gender %></td>
+            </tr>
+            <tr>
+              <td>得意言語</td>
+              <td><%= @user.program %></td>
+            </tr>
+            <tr>
+              <td>スキル</td>
+              <td><%= @user.skils.delete_if(&:empty?).join(",") %></td>
+            </tr>
       		</tbody>
       	</table>
+        <div class="text-center">
+          <%= link_to '編集', "/users/#{@user.id}/edit", method: :get, :class=>"btn btn-primary" %></td>
+          <%= link_to '削除', "/users/#{@user.id}", method: :delete, :class=>"btn btn-secondary",
+            data: {
+              confirm: "本当に#{@user.name}を削除してよろしいですか？",
+            }
+          %>
+        </div>
         <div class="progressbar-container">
+          <h3 class="text-center">スキル一覧</h3>
           <% @user.skils.each do |skill| %>
-            <div class="col-md-12">
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= @skill %>%"><%= skill %>&nbsp;&nbsp;<%= @skill %>%</div>
-              </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= @skill %>%"><%= skill %>&nbsp;&nbsp;<%= @skill %>%</div>
             </div>
           <% end %>
         </div>
