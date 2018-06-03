@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   validates :program, presence: true
   validates :skils, presence: true
 
+  has_many :users_skills
+
   def searchAll
     return User.all
   end

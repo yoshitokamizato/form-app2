@@ -14,7 +14,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    redirect_to "/"
   end
 
   def show
@@ -42,7 +41,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :age, :mail, :address, :gender, :program, :image, :skils => [] )
-
     # => (:name params[:name], :age params[:age].......)
   end
 
