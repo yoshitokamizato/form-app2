@@ -58,3 +58,4 @@ gem 'rmagick', require: 'RMagick'
 gem 'gretel'
 #データ削除確認
 gem 'data-confirm-modal'
+gem 'active_decorator'

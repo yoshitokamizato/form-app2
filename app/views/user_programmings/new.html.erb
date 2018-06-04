@@ -5,7 +5,6 @@
     <%= simple_form_for @users_skill ,:url => {:action => :create} do |f| %>
       <table class="table">
         <tbody>
-          <%= f.hidden_field :user_id, :value => @user.id %>
           <tr>
             <td>スキル</td>
             <td>
