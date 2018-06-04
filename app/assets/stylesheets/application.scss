@@ -10,12 +10,26 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap";
+
+
+@media screen and (min-width:0px){
+  /*0px以上で適用する内容*/
+  @import "smart_phone";
+}
+
+@media screen and (min-width:300px){
+  /*300px以上で適用する内容*/
+}
+
+@media screen and (min-width:600px){
+  /*600px以上で適用する内容*/
+  @import "users";
+  @import "user_programmings";
+}
 
 .form-input {
   input {
@@ -49,9 +63,4 @@
       width: 100px;
     }
   }
-}
-
-#user-form {
-  width: 700px;
-  margin: 0 auto;
 }

@@ -1,39 +1,18 @@
-<% breadcrumb :users %>
-<h1>ユーザ一覧</h1>
-<hr>
-<div class="table-responsive">
-	<table class="table">
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>名前</th>
-				<th>年齢</th>
-				<th>メール</th>
-				<th>住所</th>
-				<th>性別</th>
-				<th>得意言語</th>
-        <th>スキル</th>
-        <th>画像</th>
-        <th>編集</th>
-        <th>削除</th>
-			</tr>
-		</thead>
-		<tbody>
-      <% @users.each.with_index(1) do |user, i| %>
-        <tr>
-          <th><%= i %></th>
-          <td><%= link_to "#{user.name}", "/users/#{user.id}", method: :get %></td>
-          <td><%= user.age %></td>
-          <td><%= user.mail %></td>
-          <td><%= user.address %></td>
-          <td><%= user.gender %></td>
-          <td><%= user.program %></td>
-          <td><%= user.skils %></td>
-          <td><%= image_tag user.image_url(:thumb) %></td>
-          <td><%= link_to '編集', "/users/#{user.id}/edit", method: :get %></td>
-          <td><%= link_to '削除', "/users/#{user.id}", method: :delete %></td>
-        </tr>
-      <% end %>
-		</tbody>
-	</table>
-</div>
+<section id="users-list">
+  <% breadcrumb :users %>
+  <div class="users-form text-center">
+    <div class="container">
+      <div class="row">
+        <% @users.each.with_index(1) do |user, i| %>
+          <div class="col-12 col-md-3">
+            <%= link_to "/users/#{user.id}", method: :get do %>
+              <%= image_tag user.image_url(:thumb) %>
+              <p><%= user.name %></p>
+            <% end %>
+            <p><%= user.skils.delete_if(&:empty?).join(", ") %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

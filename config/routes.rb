@@ -3,18 +3,10 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  root to: 'users#index'
+  root to: 'users#top'
 
-  resources :users
-  resources :curriculums
-
-  get '/forms', to: 'forms#index'
-  get '/forms/new', to: 'forms#new'
-  post '/forms', to: 'forms#create'
-  get '/forms/:id/edit', to: 'forms#edit'
-  patch '/forms/:id', to: 'forms#update'
-  delete '/forms/:id', to: 'forms#destroy'
-
-  get '/reacts', to: 'reacts#index'
+  resources :users do
+    resources :user_programmings
+  end
 
 end

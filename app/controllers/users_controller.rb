@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
+  def top
+    @users = User.all
+  end
 
   def index
     @users = User.all
+    @persentage = rand(1..100)
   end
 
   def new
@@ -14,6 +18,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @skill = 100
   end
 
   def edit
@@ -23,16 +28,20 @@ class UsersController < ApplicationController
   def update
     user = User.find(params[:id])
     user.update(user_params)
+    redirect_to "/users"
   end
 
   def destroy
     user = User.find(params[:id])
     user.destroy
+    redirect_to "/"
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :age, :mail, :address, :gender, :program, :skils, :image)
+    params.require(:user).permit(:name, :age, :mail, :address, :gender, :program, :image, :skils => [] )
+    # => (:name params[:name], :age params[:age].......)
   end
+
 end

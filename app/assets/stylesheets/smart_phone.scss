@@ -1,0 +1,48 @@
+#users-list {
+  padding-top: 50px;
+  h3 {
+    font-size: 20px;
+  }
+  .prof-image {
+    padding-bottom: 15px;
+  }
+  th, td {
+    font-size: 15px;
+  }
+  .progress {
+    height: 1.3rem;
+    margin: 10px;
+  }
+  .progressbar-container {
+    padding-top: 50px;
+  }
+}
+
+#new-user-form {
+  width: 350px;
+  h3 {
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+  input[type="checkbox"] {
+    margin: 0 10px;
+  }
+  input {
+    padding: 10px;
+  }
+  label {
+    padding-right: 10px;
+  }
+  .user-form-input {
+    label {
+      padding: 5px;
+      font-size: 15px;
+    }
+    input {
+      margin-left: 10px;
+    }
+  }
+  .checkbox {
+    margin-left: 5px;
+  }
+}

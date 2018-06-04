@@ -1,0 +1,33 @@
+// Place all the styles related to the user_programmings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#new-users-skill-form {
+  padding-top: 50px;
+  width: 500px;
+  margin: 0 auto;
+  h3 {
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+  input[type="checkbox"] {
+    margin: 0 10px;
+  }
+  input {
+    padding: 10px;
+  }
+  label {
+    padding-right: 10px;
+  }
+  .user-form-input {
+    label {
+      padding: 10px;
+    }
+    input {
+      width: 300px;
+    }
+  }
+  .checkbox {
+    margin-left: 10px;
+  }
+}

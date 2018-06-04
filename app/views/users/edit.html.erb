@@ -1,49 +1,112 @@
-<section id="edit-form">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-        <div class="table-responsive">
-          <%= form_for @user do |f| %>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>項目</th>
-                  <th>入力内容</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>お名前</td>
-                  <td><%= f.text_field :name %></td>
-                </tr>
-                <tr>
-                  <td>年齢</td>
-                  <td><%= f.text_field :age %></td>
-                </tr>
-                <tr>
-                  <td>お住まい</td>
-                  <td><%= f.text_field :address %></td>
-                </tr>
-                <tr>
-                  <td>性別</td>
-                  <td><%= f.text_field :gender %></td>
-                </tr>
-                <tr>
-                  <td>得意言語</td>
-                  <td><%= f.text_field :program %></td>
-                </tr>
-                <tr>
-                  <td>スキル</td>
-                  <td><%= f.text_field :skils %></td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="btn-wrapper text-center">
-              <p><%= f.submit "送信", :class=>"btn" %></p>
-            </div>
-          <% end %>
-        </div>
+<section id="new-user-form">
+  <% breadcrumb :new_user %>
+  <h3 class="text-center">新規登録</h3>
+  <section id="user-form">
+    <%= simple_form_for @user ,:url => {:action => :update} do |f| %>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th class="text-center" scope="col">入力内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <div class="container">
+          <tr>
+            <td>
+              <div class="user-form-input">
+                <div class="row">
+                  <div class="col-3">
+                    <%= f.label :name %>
+                  </div>
+                  <div class="col-9">
+                    <%= f.input_field :name %>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="user-form-input">
+                <div class="row">
+                  <div class="col-3">
+                    <%= f.label :age %>
+                  </div>
+                  <div class="col-9">
+                    <%= f.input_field :age %>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="user-form-input">
+                <div class="row">
+                  <div class="col-3">
+                    <%= f.label :mail %>
+                  </div>
+                  <div class="col-9">
+                    <%= f.input_field :mail %>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="user-form-input">
+                <div class="row">
+                  <div class="col-3">
+                    <%= f.label :address %>
+                  </div>
+                  <div class="col-9">
+                    <%= f.input_field :address %>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="user-form-input">
+                <div class="row">
+                  <div class="col-3">
+                    <%= f.label :gender %>
+                  </div>
+                  <div class="col-9">
+                    <%= f.input_field :gender %>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="user-form-input">
+                <div class="row">
+                  <div class="col-3">
+                    <%= f.label :program %>
+                  </div>
+                  <div class="col-9">
+                    <%= f.input_field :program %>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center"><%= f.collection_check_boxes :skils, [["Java", "Java"],["Ruby", "Ruby"],["PHP", "PHP"],["Python", "Python"]], :first, :last %></td>
+          </tr>
+          <tr>
+            <td class="text-center"><%= f.label :image %><%= f.file_field :image %></td>
+          </tr>
+          </div>
+        </tbody>
+      </table>
+      <div class="btn-wrapper text-center">
+        <p><%= f.button :submit, "送信", :class=>"btn btn-primary" %></p>
       </div>
-    </div>
-  </div>
+    <% end %>
+  </section>
 </section>

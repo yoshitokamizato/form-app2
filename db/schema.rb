@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180513024349) do
+ActiveRecord::Schema.define(version: 20180604061213) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -66,17 +66,49 @@ ActiveRecord::Schema.define(version: 20180513024349) do
     t.datetime "updated_at"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "programmings", force: :cascade do |t|
     t.string   "name",       limit: 255
-    t.integer  "age",        limit: 4
-    t.string   "address",    limit: 255
-    t.string   "gender",     limit: 255
-    t.string   "program",    limit: 255
-    t.string   "skils",      limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "mail",       limit: 255
-    t.text     "image",      limit: 65535
+    t.integer  "skill",      limit: 4
   end
 
+  create_table "user_programmings", force: :cascade do |t|
+    t.integer  "user_id",        limit: 4
+    t.integer  "programming_id", limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_programmings", ["programming_id"], name: "index_user_programmings_on_programming_id", using: :btree
+  add_index "user_programmings", ["user_id"], name: "index_user_programmings_on_user_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name",           limit: 255
+    t.integer  "age",            limit: 4
+    t.string   "address",        limit: 255
+    t.string   "gender",         limit: 255
+    t.string   "program",        limit: 255
+    t.text     "skils",          limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "mail",           limit: 255
+    t.text     "image",          limit: 65535
+    t.integer  "users_skill_id", limit: 4
+  end
+
+  add_index "users", ["users_skill_id"], name: "index_users_on_users_skill_id", using: :btree
+
+  create_table "users_skills", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.integer  "skill_id",   limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name",       limit: 255
+    t.string   "skill",      limit: 255
+  end
+
+  add_foreign_key "user_programmings", "programmings"
+  add_foreign_key "user_programmings", "users"
+  add_foreign_key "users", "users_skills"
 end

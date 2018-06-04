@@ -1,3 +1,85 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#users-list {
+  padding-top: 50px;
+  h3 {
+    font-size: 20px;
+  }
+  img {
+    width: 100%;
+  }
+  .prof-image {
+    padding-bottom: 30px;
+  }
+  .progress {
+    height: 2rem;
+    margin: 30px;
+  }
+  .progressbar-container {
+    padding-top: 50px;
+  }
+}
+
+#users-list-show {
+  padding:50px 0;
+  h3 {
+    font-size: 20px;
+  }
+  table {
+    margin: 0 auto;
+  }
+  .prof-image {
+    padding-bottom: 30px;
+  }
+  .progress {
+    height: 2rem;
+    margin: 30px;
+  }
+  .progressbar-container {
+    padding-top: 50px;
+    margin: 0 auto;
+  }
+  .table-container {
+    padding: 80px 0;
+  }
+  .modal-button {
+    padding: 80px 0;
+  }
+  .user-param-button {
+    padding-top: 50px;
+  }
+}
+
+#new-user-form {
+  padding-top: 50px;
+  width: 500px;
+  margin: 0 auto;
+  h3 {
+    font-size: 30px;
+    padding-bottom: 20px;
+  }
+  input[type="checkbox"] {
+    margin: 0 10px;
+  }
+  input {
+    padding: 10px;
+  }
+  label {
+    padding-right: 10px;
+  }
+  .user-form-input {
+    label {
+      padding: 10px;
+    }
+    input {
+      width: 300px;
+      margin-left: 40px;
+    }
+  }
+  .checkbox {
+    margin-left: 10px;
+  }
+}
