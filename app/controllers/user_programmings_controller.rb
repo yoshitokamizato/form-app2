@@ -8,7 +8,7 @@ class UserProgrammingsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @programming = @user.programmings.new(users_skill_params)
-    if @programming.save
+    if @programming.save!
       # DB保存成功時の処理
     else
       # DB保存失敗時の処理
