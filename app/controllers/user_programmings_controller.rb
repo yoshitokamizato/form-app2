@@ -1,12 +1,13 @@
 class UserProgrammingsController < ApplicationController
   def new
     @user = User.find(params[:user_id])
+    @user.user_programmings.build
     @users_skill = Programming.new
   end
 
   def create
     @user = User.find(params[:user_id])
-    @programming = @user.programming.new(users_skill_params)
+    @programming = @user.programmings.new(users_skill_params)
     if @programming.save
       # DB保存成功時の処理
     else
