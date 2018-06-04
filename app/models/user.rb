@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   validates :program, presence: true
   validates :skils, presence: true
 
-  has_many :users_skills
+  has_many :UserProgramming, foreign_key: 'Programming_id' # 中間テーブルを介したデータの取り出し
+  has_many :Programming, through: :UserProgramming  # 中間テーブルを介したデータの取り出し
 
   def searchAll
     return User.all

@@ -5,7 +5,11 @@ Rails.application.routes.draw do
 
   root to: 'users#top'
 
-  resources :users
+  resources :users do
+    resources :users_skills
+  end
+
+  resources :skills
   resources :curriculums
 
   get '/forms', to: 'forms#index'
