@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   serialize :skils
 
   validates :name, presence: true
