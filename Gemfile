@@ -54,8 +54,8 @@ gem 'jquery-rails'
 gem 'activeadmin'
 gem 'devise'
 gem 'react-rails', '~> 1.0'
-gem 'carrierwave'
-gem 'rmagick', require: 'RMagick'
+gem 'carrierwave', :github => 'satoruk/carrierwave' , :ref => '43179f94d6a4e62f69e812f5082d6447c9138480'
+gem 'rmagick', require: false
 gem 'gretel'
 #データ削除確認
 gem 'data-confirm-modal'
