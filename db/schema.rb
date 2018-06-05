@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180604061213) do
+ActiveRecord::Schema.define(version: 20180605003021) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -78,6 +78,8 @@ ActiveRecord::Schema.define(version: 20180604061213) do
     t.integer  "programming_id", limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name",           limit: 255
+    t.integer  "level",          limit: 4
   end
 
   add_index "user_programmings", ["programming_id"], name: "index_user_programmings_on_programming_id", using: :btree

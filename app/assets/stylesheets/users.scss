@@ -51,6 +51,10 @@
   .user-param-button {
     padding-top: 50px;
   }
+  button, html [type="button"], [type="reset"], [type="submit"] {
+    width: 200px;
+    margin: 0 10px;
+  }
 }
 
 #new-user-form {
