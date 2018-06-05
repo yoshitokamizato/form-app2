@@ -1,3 +1,3 @@
-class UsersSkill < ActiveRecord::Base
+class UsersSkill < ApplicationRecord
   belongs_to :user
 end

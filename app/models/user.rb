@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   serialize :skils
 
   validates :name, presence: true
@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
   validates :program, presence: true
   validates :skils, presence: true
 
-  has_many :user_programming, foreign_key: 'programming_id' # 中間テーブルを介したデータの取り出し
-  has_many :programming, through: :user_programming  # 中間テーブルを介したデータの取り出し
+  has_many :user_programmings, foreign_key: 'user_id'  # 中間テーブルを介したデータの取り出し
+  has_many :programmings, through: :user_programmings  # 中間テーブルを介したデータの取り出し
 
   def searchAll
     return User.all

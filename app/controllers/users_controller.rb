@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user_programmings = UserProgramming.where(user_id: params[:id])
     @user = User.find(params[:id])
     @skill = 100
   end

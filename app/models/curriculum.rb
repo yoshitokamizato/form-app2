@@ -1,2 +1,2 @@
-class Curriculum < ActiveRecord::Base
+class Curriculum < ApplicationRecord
 end

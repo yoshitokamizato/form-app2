@@ -46,3 +46,48 @@
     margin-left: 5px;
   }
 }
+
+#users-list-show {
+  padding:50px 0;
+  h3 {
+    font-size: 20px;
+  }
+  table {
+    margin: 0 auto;
+  }
+  .prof-image {
+    padding-bottom: 30px;
+  }
+  .progress {
+    height: 2rem;
+    margin: 30px 0;
+  }
+  .progressbar-container {
+    padding-top: 50px;
+    margin: 0 auto;
+  }
+  .table-container {
+    padding: 80px 0;
+  }
+  .modal-button {
+    padding: 80px 0;
+  }
+  .user-param-button {
+    padding-top: 50px;
+  }
+  button, html [type="button"], [type="reset"], [type="submit"] {
+    width: 100px;
+    margin: 0 5px;
+  }
+}
+
+#new-users-skill-form {
+  padding: 50px 0;
+  h3 {
+    font-size: 20px;
+    padding: 10px 0;
+  }
+  td {
+    font-size: 15px;
+  }
+}
