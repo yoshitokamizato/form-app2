@@ -4,10 +4,12 @@
     <%= image_tag @user.image_url(:thumb)%>
   </div>
   <div class="progressbar-container col-md-6">
-    <% @user_programmings.each do |user_programming| %>
-      <div class="progress">
-          <div class="<%= user_programming.progressbar(user_programming.level) %>" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= user_programming.level %>%"><%= user_programming.name %>&nbsp;&nbsp;<%= user_programming.level %>%</div>
-      </div>
+    <% @user.user_programmings.each do |programming| %>
+      <% unless programming.level.nil? %>
+        <div class="progress">
+            <div class="<%= programming.progressbar(programming.level) %>" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= programming.level %>%"><%= programming.name %>&nbsp;&nbsp;<%= programming.level %>%</div>
+        </div>
+      <% end %>
     <% end %>
   </div>
   <div class="text-center modal-button">

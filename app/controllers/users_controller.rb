@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
+
   def top
     @users = User.all
   end
 
   def index
     @users = User.all
-    @persentage = rand(1..100)
   end
 
   def new
@@ -14,12 +14,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    redirect_to "/"
   end
 
   def show
-    @user_programmings = UserProgramming.where(user_id: params[:id])
     @user = User.find(params[:id])
-    @skill = 100
+    @user.user_programmings.build
   end
 
   def edit
