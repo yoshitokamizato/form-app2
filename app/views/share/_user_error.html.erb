@@ -1,0 +1,10 @@
+<% if @user.errors.any? %>
+  <div class="error_explanation">
+    <% @user.errors.full_messages.each do |message| %>
+      <h3><%= message %></h3>
+    <% end %>
+  </div>
+  <div class="text-center">
+    <%= link_to '戻る', :back, :class=>"btn btn-primary" %>
+  </div>
+<% end %>

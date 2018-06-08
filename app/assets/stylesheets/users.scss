@@ -100,3 +100,21 @@
     margin-left: 10px;
   }
 }
+
+#disp-error {
+  padding-top: 50px;
+  .error_explanation {
+    h3 {
+      font-size: 20px;
+      color: #fa5344;
+    }
+    text-align: center;
+    margin: 0 auto;
+    width: 300px;
+    border: 2px solid #fa5344;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+  }
+}
