@@ -2,15 +2,15 @@
   <% breadcrumb :new_user %>
   <h3 class="text-center">新規登録</h3>
   <section id="user-form">
-    <%= simple_form_for @user ,:url => {:action => :update} do |f| %>
+    <%= simple_form_for @user, :url => {:action => :update} do |f| %>
       <table class="table">
         <thead class="thead-dark">
-          <tr>
-            <th class="text-center" scope="col">入力内容</th>
-          </tr>
+        <tr>
+          <th class="text-center" scope="col">入力内容</th>
+        </tr>
         </thead>
         <tbody>
-          <div class="container">
+        <div class="container">
           <tr>
             <td>
               <div class="user-form-input">
@@ -97,16 +97,18 @@
           </tr>
           <tr>
 
-            <td class="text-center"><p>興味のある言語</p><%= f.collection_check_boxes :skils, [["Java", "Java"],["Ruby", "Ruby"],["PHP", "PHP"],["Python", "Python"]], :first, :last %></td>
+            <td class="text-center">
+              <p>興味のある言語</p><%= f.collection_check_boxes :skils, [["Java", "Java"], ["Ruby", "Ruby"], ["PHP", "PHP"], ["Python", "Python"]], :first, :last %>
+            </td>
           </tr>
           <tr>
             <td class="text-center"><%= f.label :image %><%= f.file_field :image %></td>
           </tr>
-          </div>
+        </div>
         </tbody>
       </table>
       <div class="btn-wrapper text-center">
-        <p><%= f.button :submit, "送信", :class=>"btn btn-primary" %></p>
+        <p><%= f.button :submit, "送信", :class => "btn btn-primary" %></p>
       </div>
     <% end %>
   </section>

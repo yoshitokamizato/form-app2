@@ -60,3 +60,20 @@ gem 'gretel'
 #データ削除確認
 gem 'data-confirm-modal'
 gem 'active_decorator'
+
+# rspecの導入
+group :development, :test do
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+  gem "guard-rspec"
+  gem "spring-commands-rspec"
+end
+# rspecの導入
+group :test do
+  gem "faker"
+  gem "capybara"
+  gem "database_cleaner"
+  gem "launchy"
+  gem "selenium-webdriver"
+  gem "shoulda-matchers"
+end
