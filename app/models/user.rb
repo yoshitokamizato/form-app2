@@ -16,16 +16,22 @@ class User < ApplicationRecord
 
   def self.import(path)
     CSV.foreach(path, headers: true) do |row|
-      p row
+      User.find_or_create_by(
+          name: row["name"],
+          age: row["age"],
+          address: row["address"],
+          gender: row["gender"],
+          program: row["program"],
+          skils: ["ruby", "php", "java"],
+          mail: row["mail"],
+      )
     end
   end
 
   def self.export
+    user = User.pluck(:skils)
     CSV.open("write-sample2.csv", "w") do |test|
-      test << ["language", "product"]
-      test << ["ruby", "web_application"]
-      test << ["python", "AI"]
-      test << ["java", "business_application"]
+      test << user
     end
   end
 

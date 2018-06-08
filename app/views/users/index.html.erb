@@ -1,18 +1,4 @@
 <section id="users-list">
   <% breadcrumb :users %>
-  <div class="users-form text-center">
-    <div class="container">
-      <div class="row">
-        <% @users.each.with_index(1) do |user, i| %>
-          <div class="col-12 col-md-3">
-            <%= link_to "/users/#{user.id}", method: :get do %>
-              <%= image_tag user.image_url(:thumb) %>
-              <p><%= user.name %></p>
-            <% end %>
-            <p><%= user.skils.delete_if(&:empty?).join(", ") %></p>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
+  <%= render :partial => "share/user_form" %>
 </section>
