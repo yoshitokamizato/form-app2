@@ -1,0 +1,17 @@
+name,age,address,gender,program,skils,mail,image
+suzuki,32,名護,男,HTML,"""[""""Java"""", """"Ruby"""", """"PHP"""", """"Python""""]""
+",hoge@co.ne.jp,20180602064338.jpg
+satou,33,那覇,男,CSS,"""[""""Java"""", """"Ruby"""", """"PHP"""", """"Python""""]""
+",hoge@co.ne.jp,20180602064338.jpg
+taira,34,伊差川,男,Sass,"""[""""Java"""", """"Ruby"""", """"PHP"""", """"Python""""]""
+",hoge@co.ne.jp,20180602064338.jpg
+higa,35,許田,男,Ruby,"""[""""Java"""", """"Ruby"""", """"PHP"""", """"Python""""]""
+",hoge@co.ne.jp,20180602064338.jpg
+kinjyou,36,宇茂佐,男,PHP,"""[""""Java"""", """"Ruby"""", """"PHP"""", """"Python""""]""
+",hoge@co.ne.jp,20180602064338.jpg
+yamauchi,37,大宜味,男,Python,"""[""""Java"""", """"Ruby"""", """"PHP"""", """"Python""""]""
+",hoge@co.ne.jp,20180602064338.jpg
+hirano,38,羽地,男,Java,"""[""""Java"""", """"Ruby"""", """"PHP"""", """"Python""""]""
+",hoge@co.ne.jp,20180602064338.jpg
+ooki,39,北谷,男,Swift,"""[""""Java"""", """"Ruby"""", """"PHP"""", """"Python""""]""
+",hoge@co.ne.jp,20180602064338.jpg

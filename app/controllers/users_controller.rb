@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    redirect_to "/"
+    redirect_to users_path unless @user.errors.any?
   end
 
   def show

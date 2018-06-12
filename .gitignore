@@ -8,9 +8,11 @@
 /.bundle
 
 # Ignore Image file
-/.public/uploads
+public/uploads
+app/assets/images
 
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
 /tmp
+config/database.yml
