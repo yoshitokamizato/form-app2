@@ -5,30 +5,22 @@ class UserProgrammingsController < ApplicationController
   end
 
   def create
-    # @user = User.find(params[:user_id])
-    # @programming = @user.programmings.build(users_skill_params)
-    # if @programming.save!
-    #   # DB保存成功時の処理
-    # else
-    #   # DB保存失敗時の処理
-    # end
-
-    UserProgramming.create(user_id: params[:user_id], name: programming_params[:name], level: programming_params[:level])
+    # UserProgramming.create(user_id: params[:user_id], name: programming_params[:name], level: programming_params[:level])
+    UserProgramming.find_or_create_by(user_id: params[:user_id], name: programming_params[:name], level: programming_params[:level])
     redirect_to controller: 'users', :action => 'show', :id => params[:user_id]
   end
 
   def edit
-    @user = User.find(params[:user_id])
-    @user.user_programmings.build
+    @users_skill = UserProgramming.find(params[:id])
   end
 
-
+  def update
+    users_skill = UserProgramming.find(params[:id])
+    users_skill.update(user_id: params[:user_id], name: programming_params[:name], level: programming_params[:level])
+    redirect_to controller: 'users', :action => 'show', :id => params[:user_id]
+  end
 
   private
-
-  # def users_skill_params
-  #   params.require(:programming).permit(:name, :skill)
-  # end
 
   def programming_params
     params.require(:user_programming).permit(:user_id, :name, :level)
