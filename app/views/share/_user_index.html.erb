@@ -1,7 +1,7 @@
 <div class="users-form text-center">
   <div class="container">
     <div class="row">
-      <% @users.each.with_index(1) do |user, i| %>
+      <% @users.each do |user| %>
         <div class="col-12 col-md-3">
           <%= link_to "/users/#{user.id}", method: :get do %>
             <% if user.image_url(:thumb).present? %>
