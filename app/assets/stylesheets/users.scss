@@ -3,6 +3,40 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.form-input {
+  input {
+    width: 300px;
+    margin: 10px;
+  }
+  label {
+    padding-right: 15px;
+  }
+  textarea {
+    width: 300px;
+  }
+}
+
+.btn-wrapper {
+  clear: both;
+  padding: 30px;
+  input {
+    width: 100px;
+  }
+}
+
+#edit-form {
+  input {
+    padding: 10px;
+    width: 100%;
+  }
+  .btn-wrapper {
+    input {
+      clear: both;
+      width: 100px;
+    }
+  }
+}
+
 #users-list {
   padding-top: 50px;
   h3 {
@@ -19,7 +53,6 @@
     margin: 30px;
   }
   .progressbar-container {
-    padding-top: 50px;
   }
   .no-image {
     padding-top: 50px;
@@ -30,7 +63,6 @@
 }
 
 #users-list-show {
-  padding:50px 0;
   h3 {
     font-size: 20px;
   }
@@ -41,21 +73,20 @@
     margin: 0 auto;
   }
   .prof-image {
-    padding-bottom: 30px;
+    padding-bottom: 10px;
   }
   .progress {
     height: 2rem;
     margin: 30px;
   }
   .progressbar-container {
-    padding-top: 50px;
     margin: 0 auto;
   }
   .table-container {
     padding: 80px 0;
   }
   .modal-button {
-    padding: 80px 0;
+    padding: 20px 0;
   }
   .user-param-button {
     padding-top: 50px;

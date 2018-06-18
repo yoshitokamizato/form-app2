@@ -14,7 +14,7 @@
         <tr>
           <td>到達度</td>
           <td>
-            <%= f.input :level , collection: [[0, 0],[20, 20],[40, 40],[60, 60],[80, 80],[100, 100]], label: false %>
+            <%= f.input :level , collection: [[20, 20],[40, 40],[60, 60],[80, 80],[100, 100]], label: false %>
           </td>
         </tr>
         </tbody>
@@ -25,7 +25,6 @@
           削除
         </button>
       </div>
-
     <% end %>
 <!--    <div class="btn-wrapper text-center">-->
       <%#= link_to edit_user_user_programming_path(@user, id: programming.id), method: :get %>
@@ -50,8 +49,8 @@
               <div class="table-container">
                 <div class="text-center user-param-button">
                   <p>本当に<%= @users_skill.name %>を削除してよろしいですか？</p>
-                  <%= link_to 'OK', user_user_programming_path(@users_skill.user_id, id: @users_skill.id), method: :delete, :class=>"btn btn-secondary", data: {confirm: ""} %>
-                  <%= link_to 'NO', edit_user_user_programming_path(@users_skill.user_id, id: @users_skill.id), method: :get, :class=>"btn btn-primary" %></td>
+                  <%= link_to 'YES', user_user_programming_path(@users_skill.user_id, id: @users_skill.id), method: :delete, :class=>"btn btn-primary", data: {confirm: ""} %>
+                  <%= link_to 'NO', edit_user_user_programming_path(@users_skill.user_id, id: @users_skill.id), method: :get, :class=>"btn btn-secondary" %></td>
                 </div>
               </div>
             </div>

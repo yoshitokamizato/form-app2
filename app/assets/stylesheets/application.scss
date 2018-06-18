@@ -15,52 +15,11 @@
 
 @import "bootstrap";
 
-
-@media screen and (min-width:0px){
-  /*0px以上で適用する内容*/
+@media (min-width: 0px){
   @import "smart_phone";
 }
 
-@media screen and (min-width:300px){
-  /*300px以上で適用する内容*/
-}
-
-@media screen and (min-width:600px){
-  /*600px以上で適用する内容*/
+@media (min-width: 768px){
   @import "users";
   @import "user_programmings";
-}
-
-.form-input {
-  input {
-    width: 300px;
-    margin: 10px;
-  }
-  label {
-    padding-right: 15px;
-  }
-  textarea {
-    width: 300px;
-  }
-}
-
-.btn-wrapper {
-  clear: both;
-  padding: 30px;
-  input {
-    width: 100px;
-  }
-}
-
-#edit-form {
-  input {
-    padding: 10px;
-    width: 100%;
-  }
-  .btn-wrapper {
-    input {
-      clear: both;
-      width: 100px;
-    }
-  }
 }
