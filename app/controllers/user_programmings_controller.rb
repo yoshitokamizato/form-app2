@@ -5,7 +5,6 @@ class UserProgrammingsController < ApplicationController
   end
 
   def create
-    # UserProgramming.create(user_id: params[:user_id], name: programming_params[:name], level: programming_params[:level])
     UserProgramming.find_or_create_by(user_id: params[:user_id], name: programming_params[:name], level: programming_params[:level])
     redirect_to controller: 'users', :action => 'show', :id => params[:user_id]
   end
