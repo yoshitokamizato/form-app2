@@ -82,11 +82,7 @@
                 </table>
                 <div class="text-center user-param-button">
                   <%= link_to '編集', "/users/#{@user.id}/edit", method: :get, :class=>"btn btn-primary" %></td>
-                  <%= link_to '削除', "/users/#{@user.id}", method: :delete, :class=>"btn btn-secondary",
-                    data: {
-                      confirm: "本当に#{@user.name}を削除してよろしいですか？",
-                    }
-                  %>
+                  <%= link_to '削除', "/users/#{@user.id}", method: :delete, :class=>"btn btn-secondary", data: {confirm: "本当に#{@user.name}を削除してよろしいですか？"} %>
                 </div>
               </div>
             </div>

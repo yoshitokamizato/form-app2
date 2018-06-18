@@ -1,4 +1,4 @@
-<section id="new-users-skill-form">
+<section id="edit-users-skill-form">
   <% breadcrumb :new_user %>
   <h3 class="text-center">追加したいスキルを選択</h3>
   <section id="user-form">
@@ -20,8 +20,11 @@
         </tbody>
       </table>
       <div class="btn-wrapper text-center">
-        <p><%= f.button :submit, "送信", :class=>"btn btn-primary" %></p>
+        <%= f.button :submit, "確定", :class=>"btn btn-primary" %>
       </div>
     <% end %>
+    <div class="btn-wrapper text-center">
+      <%= button_to '削除', "/users/#{@users_skill.user_id}/user_programmings/#{@users_skill.id}" , :method => :delete, :class=>"btn btn-secondary", data: {confirm: "本当に#{@users_skill.name}を削除してよろしいですか？"} %>
+    </div>
   </section>
 </section>

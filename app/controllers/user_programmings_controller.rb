@@ -20,6 +20,12 @@ class UserProgrammingsController < ApplicationController
     redirect_to controller: 'users', :action => 'show', :id => params[:user_id]
   end
 
+  def destroy
+    users_skill = UserProgramming.find(params[:id])
+    users_skill.destroy
+    redirect_to controller: 'users', :action => 'show', :id => params[:user_id]
+  end
+
   private
 
   def programming_params

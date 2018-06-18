@@ -368,6 +368,7 @@ DEPENDENCIES
   pry-rails
   rails (= 5.0.2)
   rails-i18n
+  ransack
   react-rails (~> 1.0)
   rmagick
   rspec-rails
