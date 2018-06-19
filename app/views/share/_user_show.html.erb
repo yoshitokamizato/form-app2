@@ -10,7 +10,7 @@
     <% unless programming.level.nil? %>
       <%= link_to edit_user_user_programming_path(@user, id: programming.id), method: :get do %>
         <div class="progress">
-          <div class="<%= programming.progressbar(programming.level) %>" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= programming.level %>%"><%= programming.name %>&nbsp;&nbsp;<%= programming.level %>%</div>
+          <div class="<%= programming.progressbar(programming.level) %>" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= programming.level %>%"><%= programming.skill_name %>&nbsp;&nbsp;<%= programming.level %>%</div>
         </div>
       <% end %>
     <% end %>

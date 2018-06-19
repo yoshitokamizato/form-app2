@@ -5,7 +5,7 @@ class UserProgrammingsController < ApplicationController
   end
 
   def create
-    UserProgramming.find_or_create_by(user_id: params[:user_id], name: programming_params[:name], level: programming_params[:level])
+    UserProgramming.find_or_create_by(user_id: params[:user_id], skill_name: programming_params[:skill_name], level: programming_params[:level])
     redirect_to controller: 'users', :action => 'show', :id => params[:user_id]
   end
 
@@ -15,7 +15,7 @@ class UserProgrammingsController < ApplicationController
 
   def update
     users_skill = UserProgramming.find(params[:id])
-    users_skill.update(user_id: params[:user_id], name: programming_params[:name], level: programming_params[:level])
+    users_skill.update(user_id: params[:user_id], skill_name: programming_params[:skill_name], level: programming_params[:level])
     redirect_to controller: 'users', :action => 'show', :id => params[:user_id]
   end
 
@@ -33,7 +33,7 @@ class UserProgrammingsController < ApplicationController
   private
 
   def programming_params
-    params.require(:user_programming).permit(:user_id, :name, :level)
+    params.require(:user_programming).permit(:user_id, :skill_name, :level)
   end
 
 end

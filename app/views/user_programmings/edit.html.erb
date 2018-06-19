@@ -8,7 +8,7 @@
         <tr>
           <td>スキル</td>
           <td>
-            <%= f.input :name, as: :select, collection: [["Ruby", "Ruby"],["JavaScript", "JavaScript"],["Java", "Java"],["PHP", "PHP"],["Python", "Python"],["Sass", "Sass"],["Swift", "Swift"]], label_method: :second, value_method: :first, label: false %>
+            <%= f.input :skill_name, as: :select, collection: [["Ruby", "Ruby"],["JavaScript", "JavaScript"],["Java", "Java"],["PHP", "PHP"],["Python", "Python"],["Sass", "Sass"],["Swift", "Swift"]], label_method: :second, value_method: :first, label: false %>
           </td>
         </tr>
         <tr>
@@ -48,7 +48,7 @@
             <div class="table-responsive">
               <div class="table-container">
                 <div class="text-center user-param-button">
-                  <p>本当に<%= @users_skill.name %>を削除してよろしいですか？</p>
+                  <p>本当に<%= @users_skill.skill_name %>を削除してよろしいですか？</p>
                   <%= link_to 'YES', user_user_programming_path(@users_skill.user_id, id: @users_skill.id), method: :delete, :class=>"btn btn-primary", data: {confirm: ""} %>
                   <%= link_to 'NO', edit_user_user_programming_path(@users_skill.user_id, id: @users_skill.id), method: :get, :class=>"btn btn-secondary" %></td>
                 </div>
