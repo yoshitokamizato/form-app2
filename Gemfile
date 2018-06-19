@@ -77,3 +77,6 @@ group :test do
   gem "selenium-webdriver"
   gem "shoulda-matchers"
 end
+
+# データベース検索
+gem 'ransack'

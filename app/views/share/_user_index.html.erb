@@ -1,15 +1,14 @@
 <div class="users-form text-center">
   <div class="container">
     <div class="row">
-      <% @users.each.with_index(1) do |user, i| %>
-        <div class="col-12 col-md-3">
+      <% @users.each do |user| %>
+        <div class="form col-12 col-md-3">
           <%= link_to "/users/#{user.id}", method: :get do %>
             <% if user.image_url(:thumb).present? %>
               <%= image_tag user.image_url(:thumb) %>
             <% else %>
               <%= image_tag 'yuuhi.png' %>
             <% end %>
-            <p><%= user.name %></p>
           <% end %>
         </div>
       <% end %>

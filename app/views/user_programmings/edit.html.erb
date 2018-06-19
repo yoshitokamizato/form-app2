@@ -1,0 +1,62 @@
+<section id="edit-users-skill-form">
+  <% breadcrumb :new_user %>
+  <h3 class="text-center">変更</h3>
+  <section id="user-form">
+    <%= simple_form_for @users_skill ,:url => {:action => :update} do |f| %>
+      <table class="table">
+        <tbody>
+        <tr>
+          <td>スキル</td>
+          <td>
+            <%= f.input :skill_name, as: :select, collection: [["Ruby", "Ruby"],["JavaScript", "JavaScript"],["Java", "Java"],["PHP", "PHP"],["Python", "Python"],["Sass", "Sass"],["Swift", "Swift"]], label_method: :second, value_method: :first, label: false %>
+          </td>
+        </tr>
+        <tr>
+          <td>到達度</td>
+          <td>
+            <%= f.input :level , collection: [[20, 20],[40, 40],[60, 60],[80, 80],[100, 100]], label: false %>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <div class="btn-wrapper text-center">
+        <%= f.button :button, "確定", :class=>"btn btn-primary" %>
+        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
+          削除
+        </button>
+      </div>
+    <% end %>
+<!--    <div class="btn-wrapper text-center">-->
+      <%#= link_to edit_user_user_programming_path(@user, id: programming.id), method: :get %>
+      <%#= button_to '削除', user_user_programming_path(programming.id), :method => :delete, :class=>"btn btn-secondary", data: {confirm: "本当に#{programming.name}を削除してよろしいですか？"} %>
+<!--    </div>-->
+  </section>
+</section>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">確認</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="table-responsive">
+              <div class="table-container">
+                <div class="text-center user-param-button">
+                  <p>本当に<%= @users_skill.skill_name %>を削除してよろしいですか？</p>
+                  <%= link_to 'YES', user_user_programming_path(@users_skill.user_id, id: @users_skill.id), method: :delete, :class=>"btn btn-primary", data: {confirm: ""} %>
+                  <%= link_to 'NO', edit_user_user_programming_path(@users_skill.user_id, id: @users_skill.id), method: :get, :class=>"btn btn-secondary" %></td>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

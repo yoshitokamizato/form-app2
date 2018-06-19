@@ -1,0 +1,37 @@
+<section id="users-skill-search-form">
+  <div class="search-form text-center">
+    <%= form_tag('/users/user_programmings/search', method: :post) do %>
+      <%= label_tag :スキル %>
+      <%= text_field_tag :skill %>
+      <%= label_tag :名前 %>
+      <%= text_field_tag :name %>
+      <%= submit_tag '検索' %>
+    <% end %>
+  </div>
+  <div class="users-data">
+    <div>
+      <table class="table text-center">
+        <tbody>
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">名前</th>
+            <th scope="col" colspan="2">スキル</th>
+          </tr>
+        </thead>
+        <% @users_skill.each do |skill| %>
+          <tr>
+            <td><%= skill.user.name %></td>
+            <td colspan="2">
+              <%= link_to edit_user_user_programming_path(skill.user, id: skill.id), method: :get do %>
+                <div class="progress">
+                  <div class="<%= skill.progressbar(skill.level) %>" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= skill.level %>%"><%= skill.skill_name %>&nbsp;&nbsp;<%= skill.level %>%</div>
+                </div>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

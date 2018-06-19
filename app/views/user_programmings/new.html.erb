@@ -8,13 +8,13 @@
           <tr>
             <td>スキル</td>
             <td>
-              <%= f.input :name, as: :select, collection: [["Ruby", "Ruby"],["JavaScript", "JavaScript"],["Java", "Java"],["PHP", "PHP"],["Python", "Python"],["Sass", "Sass"],["Swift", "Swift"]], label_method: :second, value_method: :first, label: false %>
+              <%= f.input :skill_name, as: :select, collection: [["Ruby", "Ruby"],["JavaScript", "JavaScript"],["Java", "Java"],["PHP", "PHP"],["Python", "Python"],["Sass", "Sass"],["Swift", "Swift"]], selected: 'Ruby', label_method: :second, value_method: :first, label: false %>
             </td>
           </tr>
           <tr>
             <td>到達度</td>
             <td>
-              <%= f.input :level , collection: [[0, 0],[20, 20],[40, 40],[60, 60],[80, 80],[100, 100]], label: false %>
+              <%= f.input :level , collection: [[20, 20],[40, 40],[60, 60],[80, 80],[100, 100]], selected: 20,  label: false %>
             </td>
           </tr>
         </tbody>
