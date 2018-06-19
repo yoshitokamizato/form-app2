@@ -25,6 +25,11 @@ class UserProgrammingsController < ApplicationController
     redirect_to controller: 'users', :action => 'show', :id => params[:user_id]
   end
 
+  def search
+    skill = UserProgramming.new(skill: params[:skill], name: params[:name])
+    @users_skill = skill.search
+  end
+
   private
 
   def programming_params
