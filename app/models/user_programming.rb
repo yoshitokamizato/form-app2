@@ -9,6 +9,6 @@ class UserProgramming < ApplicationRecord
   attr_accessor :skill, :name
 
   def search
-    UserProgramming.ransack(name_eq: @skill, user_name_eq: @name).result
+    UserProgramming.ransack(skill_name_eq: @skill, user_name_eq: @name).result
   end
 end

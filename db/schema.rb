@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180605003021) do
+ActiveRecord::Schema.define(version: 20180619083354) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "namespace"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20180605003021) do
     t.integer  "programming_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
+    t.string   "skill_name"
     t.integer  "level"
     t.index ["programming_id"], name: "index_user_programmings_on_programming_id", using: :btree
     t.index ["user_id"], name: "index_user_programmings_on_user_id", using: :btree
