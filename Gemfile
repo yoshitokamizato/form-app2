@@ -80,3 +80,6 @@ end
 
 # データベース検索
 gem 'ransack'
+
+# ページネーション
+gem 'kaminari', '~> 0.17.0'

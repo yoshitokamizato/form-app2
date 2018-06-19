@@ -27,7 +27,7 @@ class UserProgrammingsController < ApplicationController
 
   def search
     user_skill = UserProgramming.new(skill: params[:skill], name: params[:name])
-    @users_skill = user_skill.search
+    @users_skill = user_skill.search.page(params[:page]).per(3)
   end
 
   private
