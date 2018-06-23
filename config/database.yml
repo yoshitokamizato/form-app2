@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: formApp2_production
-  username: formApp2
-  password: <%= ENV['FORMAPP2_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
